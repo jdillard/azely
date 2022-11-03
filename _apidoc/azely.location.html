@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>azely.location module &#8212; Python  documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="azely.object module" href="azely.object.html" />
+    <link rel="prev" title="azely.consts module" href="azely.consts.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo-light.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo-dark.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Home
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="azely.html">
+  Package guide
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/astropenguin/pandas-dataclasses/" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/astropengu_in/" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.azel.html">
+   azely.azel module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.consts.html">
+   azely.consts module
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   azely.location module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.object.html">
+   azely.object module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.time.html">
+   azely.time module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.utils.html">
+   azely.utils module
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#azely.location.Location">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Location
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azely.location.Location.altitude">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Location.altitude
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azely.location.Location.latitude">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Location.latitude
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azely.location.Location.longitude">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Location.longitude
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azely.location.Location.name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Location.name
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azely.location.Location.to_dict">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Location.to_dict()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azely.location.Location.to_earthloc">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Location.to_earthloc()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azely.location.Location.tzinfo">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Location.tzinfo
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#azely.location.get_location">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_location()
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="module-azely.location">
+<span id="azely-location-module"></span><h1>azely.location module<a class="headerlink" href="#module-azely.location" title="Permalink to this heading">#</a></h1>
+<p>Azely’s location module (mid-level API).</p>
+<p>This module mainly provides <code class="docutils literal notranslate"><span class="pre">Location</span></code> class for location information
+and <code class="docutils literal notranslate"><span class="pre">get_location</span></code> function to search for location information as an
+instance of <code class="docutils literal notranslate"><span class="pre">Location</span></code> class.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Location</span></code> class is defined as:
+<code class="docutils literal notranslate"><span class="pre">Location(name:</span> <span class="pre">str,</span> <span class="pre">longitude:</span> <span class="pre">str,</span> <span class="pre">latitude:</span> <span class="pre">str,</span> <span class="pre">altitude:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'0')</span></code>,
+where units of lon/lat and altitude are deg and meter, respectively.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">get_location</span></code> function acquires location information from:
+(1) Guess by IP address (by default). Internet connection is required.
+(2) Data from OpenStreetMap. Internet connection is required.
+(3) User-defined location information written in a TOML file.</p>
+<p>In the case of (1) and (2), obtained location information is cached
+in a special TOML file (<code class="docutils literal notranslate"><span class="pre">~/.config/azely/locations.toml</span></code>) for an offline use.</p>
+<p>In the case of (3), users can define location information in a TOML file
+(e.g., <code class="docutils literal notranslate"><span class="pre">user.toml</span></code>) which should be put in a current directory or in the
+Azely’s config directory (<code class="docutils literal notranslate"><span class="pre">~/.config/azely</span></code>). Location information must be
+defined as a table in the TOML file like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># user.toml</span>
+
+<span class="p">[</span><span class="n">ASTE</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ASTE Telescope&quot;</span>
+<span class="n">longitude</span> <span class="o">=</span> <span class="s2">&quot;-67.70317915&quot;</span>
+<span class="n">latitude</span> <span class="o">=</span> <span class="s2">&quot;-22.97163575&quot;</span>
+<span class="n">altitude</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+</pre></div>
+</div>
+<p>Then location information can be obtained by <code class="docutils literal notranslate"><span class="pre">get_location(&lt;query&gt;)</span></code>.
+Use <code class="docutils literal notranslate"><span class="pre">get_location(&lt;name&gt;:&lt;query&gt;)</span></code> for user-defined location information,
+where <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> must be the name of a TOML file without suffix or the full
+path of it. If it does not exist in a current directory, the function
+will try to find it in the Azely’s config directory (<code class="docutils literal notranslate"><span class="pre">~/.config/azely</span></code>).</p>
+<p class="rubric">Examples</p>
+<p>To get location information by IP address:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">get_location</span><span class="p">(</span><span class="s1">&#39;here&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get location information from OpenStreetMap:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">get_location</span><span class="p">(</span><span class="s1">&#39;ALMA AOS&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get location information from <code class="docutils literal notranslate"><span class="pre">user.toml</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">get_location</span><span class="p">(</span><span class="s1">&#39;user:ASTE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="azely.location.Location">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">altitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'0'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azely/location.html#Location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#azely.location.Location" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Azely’s location information class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – </p></li>
+<li><p><strong>longitude</strong> (<em>str</em>) – </p></li>
+<li><p><strong>latitude</strong> (<em>str</em>) – </p></li>
+<li><p><strong>altitude</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="azely.location.Location.altitude">
+<span class="sig-name descname"><span class="pre">altitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'0'</span></em><a class="headerlink" href="#azely.location.Location.altitude" title="Permalink to this definition">#</a></dt>
+<dd><p>Altitude expressed in units of meters.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="azely.location.Location.latitude">
+<span class="sig-name descname"><span class="pre">latitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#azely.location.Location.latitude" title="Permalink to this definition">#</a></dt>
+<dd><p>Latitude expressed in units of degrees.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="azely.location.Location.longitude">
+<span class="sig-name descname"><span class="pre">longitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#azely.location.Location.longitude" title="Permalink to this definition">#</a></dt>
+<dd><p>Longitude expressed in units of degrees.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="azely.location.Location.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#azely.location.Location.name" title="Permalink to this definition">#</a></dt>
+<dd><p>Location’s name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="azely.location.Location.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/azely/location.html#Location.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#azely.location.Location.to_dict" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert it to a Python’s dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Dict</em>[str, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="azely.location.Location.to_earthloc">
+<span class="sig-name descname"><span class="pre">to_earthloc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">EarthLocation</span></span></span><a class="reference internal" href="../_modules/azely/location.html#Location.to_earthloc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#azely.location.Location.to_earthloc" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert it to an astropy’s earth location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>EarthLocation</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="azely.location.Location.tzinfo">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tzinfo</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tzinfo</span></em><a class="headerlink" href="#azely.location.Location.tzinfo" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a location’s tzinfo.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="azely.location.get_location">
+<span class="sig-name descname"><span class="pre">get_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'here'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#azely.location.Location" title="azely.location.Location"><span class="pre">Location</span></a></span></span><a class="reference internal" href="../_modules/azely/location.html#get_location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#azely.location.get_location" title="Permalink to this definition">#</a></dt>
+<dd><p>Get location information by various ways.</p>
+<p>This function acquires location information by the following three ways:
+(1) Guess by IP address (by default). Internet connection is required.
+(2) Data from OpenStreetMap. Internet connection is required.
+(3) User-defined location information written in a TOML file.</p>
+<p>In the cases of (1) and (2), obtained location information is cached
+in a special TOML file (<code class="docutils literal notranslate"><span class="pre">~/.config/azely/locations.toml</span></code>) for an offline use.</p>
+<p>In the case of (3), users can define location information in a TOML file
+(e.g., <code class="docutils literal notranslate"><span class="pre">user.toml</span></code>) which should be put in a current directory or in the
+Azely’s config directory (<code class="docutils literal notranslate"><span class="pre">~/.config/azely</span></code>).</p>
+<p>Then location information can be obtained by <code class="docutils literal notranslate"><span class="pre">get_location(&lt;query&gt;)</span></code>.
+Use <code class="docutils literal notranslate"><span class="pre">get_location(&lt;name&gt;:&lt;query&gt;)</span></code> for user-defined location information,
+where <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> must be the name of a TOML file without suffix or the full
+path of it. If it does not exist in a current directory, the function
+will try to find it in the Azely’s config directory (<code class="docutils literal notranslate"><span class="pre">~/.config/azely</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – Query string (e.g., <code class="docutils literal notranslate"><span class="pre">'ALMA</span> <span class="pre">AOS'</span></code> or <code class="docutils literal notranslate"><span class="pre">'user:ASTE'</span></code>).
+Default value, ‘here’, is a special one with which the function
+tries to guess location information by an IP address of a client.</p></li>
+<li><p><strong>timeout</strong> (<em>int</em>) – Query timeout expressed in units of seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Location information as an instance of <code class="docutils literal notranslate"><span class="pre">Location</span></code> class.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="azely.utils.html#azely.utils.AzelyError" title="azely.utils.AzelyError"><strong>AzelyError</strong></a> – Raised if the function fails to get location information.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#azely.location.Location" title="azely.location.Location"><em>Location</em></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>To get location information by IP address:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">get_location</span><span class="p">(</span><span class="s1">&#39;here&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get location information from OpenStreetMap:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">get_location</span><span class="p">(</span><span class="s1">&#39;ALMA AOS&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get location information from <code class="docutils literal notranslate"><span class="pre">user.toml</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">get_location</span><span class="p">(</span><span class="s1">&#39;user:ASTE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="azely.consts.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">azely.consts module</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="azely.object.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">azely.object module</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2017-2022, Akio Taniguchi.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

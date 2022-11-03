@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>azely.time module &#8212; Python  documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="azely.utils module" href="azely.utils.html" />
+    <link rel="prev" title="azely.object module" href="azely.object.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo-light.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo-dark.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Home
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="azely.html">
+  Package guide
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/astropenguin/pandas-dataclasses/" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/astropengu_in/" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.azel.html">
+   azely.azel module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.consts.html">
+   azely.consts module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.location.html">
+   azely.location module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.object.html">
+   azely.object module
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   azely.time module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="azely.utils.html">
+   azely.utils module
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#azely.time.Time">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Time
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azely.time.Time.to_index">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Time.to_index()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azely.time.Time.to_obstime">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Time.to_obstime()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#azely.time.get_time">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_time()
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="module-azely.time">
+<span id="azely-time-module"></span><h1>azely.time module<a class="headerlink" href="#module-azely.time" title="Permalink to this heading">#</a></h1>
+<p>Azely’s time module (mid-level API).</p>
+<p>This module mainly provides <code class="docutils literal notranslate"><span class="pre">Time</span></code> class for date and time information at a
+given location (time information, hereafter) and <code class="docutils literal notranslate"><span class="pre">get_time</span></code> function to obtain
+time information as an instance of <code class="docutils literal notranslate"><span class="pre">Time</span></code> class.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Time</span></code> class is subclass of <code class="docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code> and expressed like
+<code class="docutils literal notranslate"><span class="pre">Time(['2020-02-18'],</span> <span class="pre">dtype='datetime64[ns,</span> <span class="pre">Asia/Tokyo]',</span> <span class="pre">freq='D')</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">get_time</span></code> function computes time information in several cases:
+(1) Current time (e.g., [2020-01-01 22:32:58+09:00]).
+(2) Time range today (e.g., [2020-01-01 00:00, …, 2020-01-02 00:00])
+(3) Time range of given date and length (by query)</p>
+<p>In the cases of (1) and (2), special queries, <code class="docutils literal notranslate"><span class="pre">'now'</span></code> and <code class="docutils literal notranslate"><span class="pre">'today'</span></code>, must be
+specified, respectively. The <code class="docutils literal notranslate"><span class="pre">view</span></code> option specifies a timezone where
+time (range) is considered (timezone or location name can be accepted).</p>
+<p>In the case of (3), formatted query (e.g., <code class="docutils literal notranslate"><span class="pre">'2020-01-01</span> <span class="pre">to</span> <span class="pre">2020-01-05'</span></code>)
+or natural language-like query can be used (e.g., <code class="docutils literal notranslate"><span class="pre">'Jan.</span> <span class="pre">1st</span> <span class="pre">to</span> <span class="pre">Jan.</span> <span class="pre">5th'</span></code>),
+where start and end must be separated by <code class="docutils literal notranslate"><span class="pre">'to'</span></code>. The <code class="docutils literal notranslate"><span class="pre">view</span></code> option also works.</p>
+<p class="rubric">Examples</p>
+<p>To get current time in Tokyo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_time</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get current time in UTC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_time</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get time range today at ALMA AOS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_time</span><span class="p">(</span><span class="s1">&#39;today&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s2">&quot;ALMA AOS&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get time range from Jan. 1 to Jan. 5 in 2020 in UTC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_time</span><span class="p">(</span><span class="s1">&#39;2020-01-01 to 2020-01-05&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s1">&#39;UTC&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="azely.time.Time">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">BaseOffset</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">lib.NoDefault</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">_NoDefault.no_default</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ambiguous</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dayfirst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yearfirst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dtype</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azely/time.html#Time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#azely.time.Time" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DatetimeIndex</span></code></p>
+<p>Azely’s time information class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>freq</strong> (<em>str</em><em> | </em><em>BaseOffset</em><em> | </em><em>lib.NoDefault</em>) – </p></li>
+<li><p><strong>normalize</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>dayfirst</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>yearfirst</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>dtype</strong> (<em>Dtype</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>copy</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>name</strong> (<em>Hashable</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>DatetimeIndex</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="azely.time.Time.to_index">
+<span class="sig-name descname"><span class="pre">to_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DatetimeIndex</span></span></span><a class="reference internal" href="../_modules/azely/time.html#Time.to_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#azely.time.Time.to_index" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert it to a pandas DatetimeIndex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>DatetimeIndex</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="azely.time.Time.to_obstime">
+<span class="sig-name descname"><span class="pre">to_obstime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">earthloc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EarthLocation</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Time</span></span></span><a class="reference internal" href="../_modules/azely/time.html#Time.to_obstime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#azely.time.Time.to_obstime" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert it to an astropy’s time (obstime).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>earthloc</strong> (<em>EarthLocation</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Time</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="azely.time.get_time">
+<span class="sig-name descname"><span class="pre">get_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'today'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'here'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'10T'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dayfirst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yearfirst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#azely.time.Time" title="azely.time.Time"><span class="pre">Time</span></a></span></span><a class="reference internal" href="../_modules/azely/time.html#get_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#azely.time.get_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Get time information by various ways.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">get_time</span></code> function computes time information in several cases:
+(1) Current time (e.g., [2020-01-01 22:32:58+09:00]).
+(2) Time range of today (e.g., [2020-01-01 00:00, …, 2020-01-02 00:00])
+(3) Time range of given date and length (by query)</p>
+<p>In the cases of (1) and (2), special queries, <code class="docutils literal notranslate"><span class="pre">'now'</span></code> and <code class="docutils literal notranslate"><span class="pre">'today'</span></code>, must be
+specified, respectively. The <code class="docutils literal notranslate"><span class="pre">view</span></code> option specifies a timezone where
+time (range) is considered (timezone or location name can be accepted).</p>
+<p>In the case of (3), formatted query (e.g., <code class="docutils literal notranslate"><span class="pre">'2020-01-01</span> <span class="pre">to</span> <span class="pre">2020-01-05'</span></code>)
+or natural language-like query can be used (e.g., <code class="docutils literal notranslate"><span class="pre">'Jan.</span> <span class="pre">1st</span> <span class="pre">to</span> <span class="pre">Jan.</span> <span class="pre">5th'</span></code>),
+where start and end must be separated by <code class="docutils literal notranslate"><span class="pre">'to'</span></code>. The <code class="docutils literal notranslate"><span class="pre">view</span></code> option also works.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – Query string (e.g., <code class="docutils literal notranslate"><span class="pre">'2020-01-01</span> <span class="pre">to</span> <span class="pre">2020-01-05'</span></code>).
+If <code class="docutils literal notranslate"><span class="pre">'today'</span></code> (by default) or <code class="docutils literal notranslate"><span class="pre">'now'</span></code> is specified,
+then time range of today or current time is computed, respectively.</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – Name of timezone (e.g., <code class="docutils literal notranslate"><span class="pre">'Asia/Tokyo'</span></code> or <code class="docutils literal notranslate"><span class="pre">'UTC'</span></code>) or location
+with which timezone can be identified (e.g., <code class="docutils literal notranslate"><span class="pre">'Tokyo'</span></code>).</p></li>
+<li><p><strong>freq</strong> (<em>str</em>) – Frequency of time samples as the same format of pandas offset aliases
+(e.g., <code class="docutils literal notranslate"><span class="pre">'1D'</span></code> -&gt; 1 day, <code class="docutils literal notranslate"><span class="pre">'3H'</span></code> -&gt; 3 hours, <code class="docutils literal notranslate"><span class="pre">'10T'</span></code> -&gt; 10 minutes).</p></li>
+<li><p><strong>dayfirst</strong> (<em>bool</em>) – Whether to interpret the first value in an ambiguous 3-integer
+date (e.g., <code class="docutils literal notranslate"><span class="pre">'01-02-03'</span></code>) as the day. If True, for example,
+<code class="docutils literal notranslate"><span class="pre">'01-02-03'</span></code> is treated as Feb. 1st 2003.</p></li>
+<li><p><strong>yearfirst</strong> (<em>bool</em>) – Whether to interpret the first value in an ambiguous 3-integer
+date (e.g., <code class="docutils literal notranslate"><span class="pre">'01-02-03'</span></code>) as the year. If True, for example,
+<code class="docutils literal notranslate"><span class="pre">'01-02-03'</span></code> is treated as Feb. 3rd 2001.
+If <code class="docutils literal notranslate"><span class="pre">dayfirst</span></code> is also <code class="docutils literal notranslate"><span class="pre">True</span></code>, then it will be Mar. 2nd 2001.</p></li>
+<li><p><strong>timeout</strong> (<em>int</em>) – Query timeout expressed in units of seconds (see notes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Time information as an instance of <code class="docutils literal notranslate"><span class="pre">Time</span></code> class.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="azely.utils.html#azely.utils.AzelyError" title="azely.utils.AzelyError"><strong>AzelyError</strong></a> – Raised if the function fails to parse query or timezone.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#azely.time.Time" title="azely.time.Time"><em>Time</em></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If location is specified as <code class="docutils literal notranslate"><span class="pre">view</span></code>, then <code class="docutils literal notranslate"><span class="pre">azely.location.get_location</span></code>
+function is used inside the function, which requires internet connection
+if the location is queried for the first time.</p>
+<p class="rubric">Examples</p>
+<p>To get current time in Tokyo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_time</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get current time in UTC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_time</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get time range of today at ALMA AOS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_time</span><span class="p">(</span><span class="s1">&#39;today&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s2">&quot;ALMA AOS&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get time range from Jan. 1 to Jan. 5 in 2020 in UTC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">azely</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_time</span><span class="p">(</span><span class="s1">&#39;2020-01-01 to 2020-01-05&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s1">&#39;UTC&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="azely.object.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">azely.object module</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="azely.utils.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">azely.utils module</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2017-2022, Akio Taniguchi.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
