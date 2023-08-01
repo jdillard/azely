@@ -1,10 +1,12 @@
 __all__ = [
+    "Location",
+    "Object",
+    "Time",
     "azel",
     "compute",
     "consts",
     "get_location",
     "get_object",
-    "get_time",
     "location",
     "object",
     "time",
@@ -24,6 +26,6 @@ from . import utils
 
 # aliases
 from .azel import compute
-from .location import get_location
-from .object import get_object
-from .time import get_time
+from .location import *
+from .object import *
+from .time import *
