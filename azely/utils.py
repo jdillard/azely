@@ -43,7 +43,8 @@ def cache(func: TCallable, table: str) -> TCallable:
             tab = doc.setdefault(table, {})
 
             if update or (query not in tab):
-                tab[query] = asdict(func(*args, **kwargs))
+                obj = func(*args, **kwargs)
+                tab[query] = asdict(obj, dict_factory=dropna)
 
                 if tab is not doc.last_item():
                     tab.add(nl())
@@ -51,6 +52,11 @@ def cache(func: TCallable, table: str) -> TCallable:
             return DataClass(**tab[query].unwrap())
 
     return wrapper  # type: ignore
+
+
+def dropna(items: list[tuple[str, Any]]) -> dict[str, Any]:
+    """Dictionary factory that drops N/A items."""
+    return dict((k, v) for k, v in items if v is not None)
 
 
 def rename(func: TCallable, key: str) -> TCallable:
