@@ -3,7 +3,6 @@ __all__ = ["Location", "get_location"]
 
 # standard library
 from dataclasses import dataclass
-from datetime import tzinfo
 from functools import partial
 from typing import ClassVar, Optional
 
@@ -13,8 +12,8 @@ from astropy.coordinates import EarthLocation, Latitude, Longitude
 from astropy.units import Quantity
 from astropy.utils.data import conf
 from ipinfo import getHandler
-from pytz import timezone
 from timezonefinder import TimezoneFinder
+from zoneinfo import ZoneInfo
 from .consts import AZELY_CACHE, GOOGLE_API, HERE, IPINFO_API, TIMEOUT
 from .utils import PathLike, cache, rename
 
@@ -45,14 +44,14 @@ class Location:
         self.altitude = str(Quantity(self.altitude, "m"))
 
     @property
-    def timezone(self) -> tzinfo:
+    def timezone(self) -> ZoneInfo:
         """Timezone of the location."""
         response = self.tf.timezone_at(
             lng=Longitude(self.longitude).value,
             lat=Latitude(self.latitude).value,
         )
 
-        return timezone(str(response))
+        return ZoneInfo(str(response))
 
     def to_earthlocation(self) -> EarthLocation:
         """Convert it to an EarthLocation object."""

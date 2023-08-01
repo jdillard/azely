@@ -9,7 +9,9 @@ from typing import Optional
 
 
 # dependencies
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from .consts import AZELY_CACHE
+from .location import get_location
 from .utils import PathLike, cache, rename
 
 
@@ -40,8 +42,8 @@ class Time:
     end: str
     """Right bound of the time (exclusive, timezone-naive)."""
 
-    view: Optional[str] = None
-    """Timezone name or location name for the timezone."""
+    timezone: Optional[str] = None
+    """IANA timezone name of the time."""
 
 
 @partial(rename, key="name")
@@ -60,21 +62,37 @@ def get_time(
     time_start, view_start = split_bound(start)
     time_end, view_end = split_bound(end)
 
-    return Time(
-        name=query,
-        start=time_start,
-        end=time_end,
-        view=view_end or view_start or None,
-    )
+    if (view := view_end or view_start) is None:
+        return Time(
+            name=query,
+            start=time_start,
+            end=time_end,
+        )
+    else:
+        return Time(
+            name=query,
+            start=time_start,
+            end=time_end,
+            timezone=parse_timezone(view),
+        )
 
 
-def split_bound(bound: str) -> tuple[str, Optional[str]]:
+def parse_timezone(query: str) -> str:
+    """Return an IANA timezone name from a query."""
+    try:
+        return str(ZoneInfo(query))
+    except ZoneInfoNotFoundError:
+        loc = get_location(query, update=True)
+        return str(loc.timezone)
+
+
+def split_bound(query: str) -> tuple[str, Optional[str]]:
     """Split a bound into time and view."""
     for sep in BOUND_SEPS:
-        if len(split := sep.split(bound, 1)) == 2:
+        if len(split := sep.split(query, 1)) == 2:
             return split[0].strip(), split[1].strip()
 
-    return bound.strip(), DEFAULT_VIEW
+    return query.strip(), DEFAULT_VIEW
 
 
 def split_query(query: str) -> tuple[str, str]:
