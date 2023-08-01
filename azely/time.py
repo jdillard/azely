@@ -3,13 +3,14 @@ __all__ = ["Time", "get_time"]
 
 # standard library
 from dataclasses import dataclass
+from functools import partial
 from re import compile
 from typing import Optional
 
 
 # dependencies
 from .consts import AZELY_CACHE
-from .utils import PathLike
+from .utils import PathLike, cache, rename
 
 
 # constants
@@ -39,10 +40,12 @@ class Time:
     end: str
     """Right bound of the time (exclusive, timezone-naive)."""
 
-    view: Optional[str]
-    """Timezone name of location name for the timezone."""
+    view: Optional[str] = None
+    """Timezone name or location name for the timezone."""
 
 
+@partial(rename, key="name")
+@partial(cache, table="times")
 def get_time(
     query: str,
     /,
