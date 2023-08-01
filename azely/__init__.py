@@ -7,6 +7,7 @@ __all__ = [
     "consts",
     "get_location",
     "get_object",
+    "get_time",
     "location",
     "object",
     "time",
