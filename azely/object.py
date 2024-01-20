@@ -8,7 +8,7 @@ from typing import Optional
 
 
 # dependencies
-from astropy.coordinates import Longitude, Latitude, SkyCoord, get_body
+from astropy.coordinates import SkyCoord, get_body
 from astropy.time import Time as ObsTime
 from astropy.utils.data import conf
 from .consts import AZELY_CACHE, FRAME, SOLAR_FRAME, SOLAR_OBJECTS, TIMEOUT
@@ -30,12 +30,6 @@ class Object:
 
     frame: str
     """Equatorial coordinates of the object."""
-
-    def __post_init__(self) -> None:
-        """Add or update units of object coordinates."""
-        if not self.is_solar:
-            self.longitude = str(Longitude(self.longitude, "hr"))
-            self.latitude = str(Latitude(self.latitude, "deg"))
 
     @property
     def is_solar(self) -> bool:

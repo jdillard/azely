@@ -38,12 +38,6 @@ class Location:
     tf: ClassVar = TimezoneFinder()
     """TimezoneFinder instance."""
 
-    def __post_init__(self) -> None:
-        """Add or update units of location values."""
-        self.longitude = str(Longitude(self.longitude, "deg"))
-        self.latitude = str(Latitude(self.latitude, "deg"))
-        self.altitude = str(Quantity(self.altitude, "m"))
-
     @property
     def timezone(self) -> tzinfo:
         """Timezone of the location."""
