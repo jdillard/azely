@@ -9,7 +9,7 @@ from typing import ClassVar, Optional
 
 
 # dependencies
-from astropy.coordinates import EarthLocation, Latitude, Longitude
+from astropy.coordinates import Angle, EarthLocation, Latitude, Longitude
 from astropy.units import Quantity
 from astropy.utils.data import conf
 from ipinfo import getHandler
@@ -27,13 +27,13 @@ class Location:
     """Name of the location."""
 
     longitude: str
-    """Longitude of the location."""
+    """Longitude of the location with units."""
 
     latitude: str
-    """Latitude of the location."""
+    """Latitude of the location with units."""
 
-    altitude: str = "0.0 m"
-    """Altitude of the location."""
+    altitude: str = "0m"
+    """Altitude of the location with units."""
 
     tf: ClassVar = TimezoneFinder()
     """TimezoneFinder instance."""
@@ -108,8 +108,8 @@ def get_location_by_ip(
 
     return Location(
         name=response.city,
-        longitude=response.longitude,
-        latitude=response.latitude,
+        longitude=str(Angle(response.longitude, "deg")),
+        latitude=str(Angle(response.latitude, "deg")),
     )
 
 
