@@ -7,7 +7,7 @@ from dataclasses import asdict, replace
 from functools import wraps
 from inspect import Signature
 from pathlib import Path
-from typing import Any, Callable, Iterator, Optional, TypeVar, Union
+from typing import Any, Callable, Iterator, TypeVar, Union
 
 
 # dependencies

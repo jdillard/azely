@@ -23,10 +23,10 @@ class Object:
     """Name of the object."""
 
     longitude: str
-    """Longitude (e.g. R.A. or l) of the object."""
+    """Longitude of the object with units."""
 
     latitude: str
-    """Latitude (e.g. Dec. or b) of the object."""
+    """Latitude of the object with units."""
 
     frame: str
     """Equatorial coordinates of the object."""
@@ -126,10 +126,11 @@ def get_object_by_cds(
             parse=False,
             cache=False,
         )
+        lonlat = response.to_string("hmsdms")
 
     return Object(
         name=query,
-        longitude=str(response.data.lon),  # type: ignore
-        latitude=str(response.data.lat),  # type: ignore
+        longitude=lonlat.split()[0],  # type: ignore
+        latitude=lonlat.split()[1],  # type: ignore
         frame=frame,
     )
